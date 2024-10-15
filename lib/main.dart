@@ -20,10 +20,27 @@ class Application extends StatelessWidget {
         ),
         backgroundColor: Colors.deepOrangeAccent,
         body: SafeArea(
-          child: Column(
-            children: [
-              Text('Shahram Academy'),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image(
+                  image: AssetImage('images/1.png'),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(foregroundColor: Colors.white),
+                  onPressed: () {},
+                  child: Text(
+                    'شروع بازی',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+                Image(
+                  image: AssetImage('images/2.png'),
+                )
+              ],
+            ),
           ),
         ),
       ),
