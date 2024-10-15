@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,8 +42,8 @@ class _GameApplicationState extends State<GameApplication> {
                   style: TextButton.styleFrom(foregroundColor: Colors.white),
                   onPressed: () {
                     setState(() {
-                      top = 1;
-                      bottom = 3;
+                      top = Random().nextInt(3) + 1;
+                      bottom = Random().nextInt(3) + 1;
                     });
                   },
                   child: Text(
