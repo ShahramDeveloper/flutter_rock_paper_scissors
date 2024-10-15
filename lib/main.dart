@@ -30,32 +30,33 @@ class _GameApplicationState extends State<GameApplication> {
         ),
         backgroundColor: Colors.deepOrangeAccent,
         body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Image(
-                  image: AssetImage('images/$top.png'),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Image(
+                height: 200.0,
+                image: AssetImage('images/$top.png'),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(foregroundColor: Colors.white),
+                onPressed: () {
+                  setState(() {
+                    top = Random().nextInt(3) + 1;
+                    bottom = Random().nextInt(3) + 1;
+                  });
+                },
+                child: Text(
+                  'شروع بازی',
+                  style: TextStyle(fontSize: 20),
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(foregroundColor: Colors.white),
-                  onPressed: () {
-                    setState(() {
-                      top = Random().nextInt(3) + 1;
-                      bottom = Random().nextInt(3) + 1;
-                    });
-                  },
-                  child: Text(
-                    'شروع بازی',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
-                Image(
-                  image: AssetImage('images/$bottom.png'),
-                )
-              ],
-            ),
+              ),
+              Image(
+                height: 200.0,
+                image: AssetImage('images/$bottom.png'),
+              )
+            ],
           ),
         ),
       ),
